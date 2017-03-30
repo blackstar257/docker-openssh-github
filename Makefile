@@ -31,7 +31,7 @@ shell:
 	docker run --rm --name $(NAME)-$(INSTANCE) -i -t $(PORTS) $(VOLUMES) $(ENV) $(DOMAIN)/$(NS)/$(REPO):$(VERSION) /bin/bash
 
 run:
-	docker run --rm --name $(NAME)-$(INSTANCE) $(PORTS) $(VOLUMES) $(ENV) $(DOMAIN)/$(NS)/$(REPO):$(VERSION)
+	docker run --rm --name $(NAME)-$(INSTANCE) -p 2222:22 $(VOLUMES) $(ENV) $(DOMAIN)/$(NS)/$(REPO):$(VERSION)
 
 start:
 	docker run -d --name $(NAME)-$(INSTANCE) $(PORTS) $(VOLUMES) $(ENV) $(DOMAIN)/$(NS)/$(REPO):$(VERSION)
