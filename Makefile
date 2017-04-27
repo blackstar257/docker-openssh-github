@@ -6,6 +6,7 @@ SHELL := /bin/bash
 DOMAIN = quay.io
 NS = blackstar257
 INSTANCE = default
+VOLUMES = -v /var/run/docker.sock:/var/run/docker.sock:ro -v /proc/:/host/proc/:ro -v /sys/fs/cgroup/:/host/sys/fs/cgroup:ro
 
 REPO ?= $(shell basename `git rev-parse --show-toplevel`)
 VERSION ?= $(shell basename `git rev-parse HEAD`)
